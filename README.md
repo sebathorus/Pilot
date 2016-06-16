@@ -1,0 +1,2 @@
+# Pilot
+RaspberryPi home automation
