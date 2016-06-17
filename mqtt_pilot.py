@@ -8,10 +8,10 @@ from Adafruit_IO import MQTTClient
 
 DIR_BASE = "/var/www/html/datainst/"
 nodelist = []
-
+feed_id = "DemoFeed"
 # Set to your Adafruit IO key & username below.
-ADAFRUIT_IO_KEY      = 'your Adafruit key'
-ADAFRUIT_IO_USERNAME = 'your Adafruit user name'  # See https://accounts.adafruit.com
+ADAFRUIT_IO_KEY      = 'b4ed907fd9f741188ac20169e47e9d31'
+ADAFRUIT_IO_USERNAME = 'sebathorus'  # See https://accounts.adafruit.com
                                                     # to find your username.
 
 
