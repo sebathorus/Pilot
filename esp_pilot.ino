@@ -81,7 +81,7 @@ return;
 
 ds.reset();
 ds.select(addr);
-ds.write(0x44, 1);        // start conversion, with parasite power on at the end
+ds.write(0x44); // start conversion
 
 delay(1000);
 
@@ -128,7 +128,7 @@ espMAC = macToStr(mac);// the MAC address of each ESP8266 is used to uniquely id
 Serial.println(espMAC);
 String espdata = "temp=" + (String)celsius + "=" + (String)espMAC; // "temp=" is what is going to be sent using POST to the apache server running on RaspberryPi, see code in add.php
 client.println("POST /add.php HTTP/1.1");
-client.println("Host: 192.168.1.150");
+client.println("Host: 192.168.1.xxx");
 client.println("User-Agent: ESP8266");
 client.println("Connection: close");
 client.println("Content-Type: application/x-www-form-urlencoded");

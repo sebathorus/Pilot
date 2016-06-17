@@ -1,0 +1,2 @@
+5c:cf:7f:82:47:bb sensor1
+5c:cf:7f:82:48:ab sensor2

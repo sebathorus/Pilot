@@ -8,8 +8,8 @@ if(!empty($_POST["temp"]))
  $tempesp = "Temperature=";
  $line = ($_POST["temp"]);
  $line2 = substr($line,(strlen($line)-17));
- $mydatafile = "/var/www/html/" . $line2 . "_temphist.txt";
- $mydatafile2 = "/var/www/html/" . $line2 . "_tempinst.txt";
+ $mydatafile = "/var/www/html/datahist/" . $line2 . "_temphist.txt";
+ $mydatafile2 = "/var/www/html/datainst/" . $line2 . "_tempinst.txt";
  echo $line;
  $tempesp .= $line;
 
