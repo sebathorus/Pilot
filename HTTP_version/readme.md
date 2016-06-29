@@ -1,6 +1,4 @@
-RaspberryPi home automation
-
-Pilot aspire to become a full home automation system and is based on RaspberryPi running Raspbian and a range of sensors and actuators. On this page I'll post the software running on the various nodes of the system, so far the following modules are available:
+On this page I'll post the software running on the various nodes of the system, so far the following modules are available:
 
 esp_pilot.ino - code running on ESP8266 modules and post data on apache server running on Raspberry
 add.php - receive and process data sent by ESP nodes
