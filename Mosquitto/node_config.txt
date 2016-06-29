@@ -1,0 +1,2 @@
+5ccf7f8247bb sensor1
+5ccf7f8248ab sensor2
