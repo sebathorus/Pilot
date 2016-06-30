@@ -8,7 +8,6 @@ import paho.mqtt.client as mqtt
 
 DIR_BASEINST = "/var/www/html/datainst/"
 DIR_BASEHIST = "/var/www/html/datahist/"
-nodelist = []
 pilotIP = "aaa.bbb.ccc.ddd" - RaspberryPi IP address
 receivedvaltemp = ""
 receivedvalhum = ""
@@ -18,7 +17,7 @@ receivedvallight = ""
 
 def on_connect(mqttc, obj, flags, rc):
 	print("rc: "+str(rc))
-	#client subscribe to all feeds with names begining with "sensorfeed/"
+	#client subscribe to all topics with names beginning with "sensorfeed/"
 	mqttc.subscribe("sensorsfeed/#", 0)
 
 def on_message(mqttc, obj, msg):
