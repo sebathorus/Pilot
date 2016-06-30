@@ -14,7 +14,6 @@ receivedvalhum = ""
 receivedvallight = ""
 
 
-
 def on_connect(mqttc, obj, flags, rc):
 	print("rc: "+str(rc))
 	#client subscribe to all topics with names beginning with "sensorfeed/"
@@ -49,7 +48,6 @@ def on_message_temperature(mqttc, obj, msg):
     fhtdi.close()
 
 	print "Temperature ", tempval
-#        print(str(msg.payload))
 
 def on_message_humidity(mqttc, obj, msg):
 	global receivedvalhum
@@ -91,7 +89,7 @@ mqttc = mqtt.Client()
 
 mqttc.on_message = on_message
 
-# client follow and process only messages published on following feeds, by calling corresponding functions
+# client follow and process only messages published on following topics, by calling corresponding functions
 mqttc.message_callback_add("sensorsfeed/temperature/#", on_message_temperature)
 mqttc.message_callback_add("sensorsfeed/humidity/#", on_message_humidity)
 mqttc.message_callback_add("sensorsfeed/light/#", on_message_light)
