@@ -46,8 +46,6 @@ void callback(char* topic, byte* payload, unsigned int mqttlength) {
     recpayload += (char)payload[i];
   }
   
-  //Serial.print("recMAC ");
-  //Serial.println(recMAC);
   Serial.print("recpayload ");
   Serial.println(recpayload);
   
@@ -63,18 +61,12 @@ void reconnect() {
   espMAC = macToStr(mac);// the MAC address of each ESP8266 is used to uniquely identify nodes
   espMAC.toCharArray(espMAC2,13);
   sprintf(nodefeed, "%s%s", "sensorsfeed/commands/", espMAC2);
-//  Serial.println(espMAC);
-//  Serial.println(espMAC2);
-//  Serial.println(nodefeed);
-  
+
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
-      // Once connected, publish an announcement...
-      //client.publish("sensorsfeed/messages", "hello world");
-      // ... and resubscribe
       client.subscribe(nodefeed);//client subscribe to "sensorsfeed/commands/espMACaddress" feed and listen for commands
     } else {
       Serial.print("failed, rc=");
