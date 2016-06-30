@@ -57,7 +57,7 @@ void callback(char* topic, byte* payload, unsigned int mqttlength) {
 }
 
 void reconnect() {
-  // Loop until we're reconnected
+  // Loop until we're reconnected to MQTT broker
   espMAC = macToStr(mac);// the MAC address of each ESP8266 is used to uniquely identify nodes
   espMAC.toCharArray(espMAC2,13);
   sprintf(nodefeed, "%s%s", "sensorsfeed/commands/", espMAC2);
